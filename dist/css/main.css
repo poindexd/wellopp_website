@@ -6201,7 +6201,7 @@ nav {
 .parallax-container {
   height: 450px; }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 600px) {
   .parallax-container {
     height: 250px; } }
 
