@@ -1,0 +1,118 @@
+//mixin products(name, url, description)
+	li
+		img(src=url)
+		.caption.center
+			.card
+				h4= name
+			.card
+				p.flow-text= description
+
+//mixin product(name, url, description)
+	.parallax-container(style='height=400px')
+		.parallax
+			img(src=url)
+		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
+			h4.white-text= name
+	.row
+		.col.s12.l4
+			.card: .card-content
+				p Expert Content
+					i.grey-text.material-icons.left school
+			.card: .card-content
+				h5 Feature
+			.card: .card-content
+				h5 Feature
+		.col.s12.l8
+			.card: .card-content
+				p.flow-text= description
+
+mixin header(name, url)
+	.parallax-container
+		.parallax
+			img(src=url)
+		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
+			h4.white-text= name
+
+mixin feature(title, icon)
+	.card: .card-content
+		p= title
+			i.grey-text.material-icons.left=icon
+
+mixin content(text)
+	.card: .card-content
+		p= text
+
+doctype html
+html
+	head
+		title Wellopp
+		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+		link(rel='stylesheet' href='./css/main.css')
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300|PT+Sans', type="text/css")
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+		style.
+			.slides .card{
+					background:rgba(0,0,0,0.4);
+					padding: 10px;
+			}
+			p {
+				text-indent: 2em;
+				text-align: justify;
+			}
+
+	body
+		include sections/nav.jade
+
+		.container
+			//.slider
+				ul.slides
+					+products('Digital Discharge', './img/dd.jpg', 'Blah')
+					+products('CareView Dashboard', './img/cv.jpg', 'Blah')
+					+products('Care Messenger', './img/cm2.jpg', 'Blah')
+
+			//.row
+				.col.s12.l4
+					.card: .card-content
+						h5 Digital Discharge
+						p ;lkajsd;lfkjsad;flkjads;lfkjasdf
+
+			+header('Digital Discharge', './img/dd.jpg')
+			.row
+				.col.s12.l4
+					+feature('Expert Content', 'school')
+					+feature('Educational Surveys', 'tablet')
+					+feature('Assess Risk', 'timeline')
+				.col.s12.l8
+					+content('Digital Discharge provides software driven, interactive multimedia instructions to educate patients and streamline the discharge process for more efficient and effective discharge planning. Care teams save significant time and energy as the product automatically prepares a patient for discharge without any assistance or manual data entry necessary. Auditory, visual, and kinesthetic (touch) patient learning styles are supported to deliver greater patient engagement, understanding, and satisfaction. Empowering patients through self-driven, personalized education creates greater comprehension and, in turn, better outcomes. Digital Discharge has products focused on Diagnosis Related Groups for CHF, Diabetes, Pneumonia, COPD, General Wellness, Oncology (Scope ™), and Advanced Care Directives (CareChoice™).')
+
+			+header('CareView Dashboard', './img/cv.jpg')
+			.row
+				.col.s12.l4
+					+feature('EMR Integration','equalizer')
+					+feature('Healthy Conversations','question_answer')
+					+feature('Care Team','people')
+				.col.s12.l8
+					+content('Working in tandem with Digital Discharge, CareView Dashboard delivers patient reported outcome measures in the areas of psychosocial wellness such as support system, state of mind, medications, diet & physical activity, lifestyle, and compliance warning signs. Patients are questioned in each of these areas of their life during the Digital Discharge multimedia experience. Wellopp’s trade secret algorithm evaluates patient responses and feeds care suggestions to the CareView Dashboard. The analysis uncovers a more complete view of the patient’s entire health profile, physical and psychosocial, to inform care teams of the most effective and urgent risk areas to be addressed. Care teams discover the causal factors of patient diminished health before a personal interview and are therefore more prepared for them. Care plans focused on individualized patient needs being delivered in real-time before discharge will make the discharge episode central to improving patient outcomes.')
+
+			+header('Care Messenger', './img/cm2.jpg')
+			.row
+				.col.s12.l4
+					+feature('Web & SMS', 'phone')
+					+feature('Fully Customizable', 'question_answer')
+					+feature('Care Team', 'people')
+				.col.s12.l8
+					+content('Care Messenger sends personalized messages to patients by text or email for follow up post-discharge. Patients can respond to any type of question immediately through text or email and maintain an ongoing dialogue with their care team. Wellopp can analyze responses by patients to determine compliance likelihood and additional risk factors. Psychosocial questions previously asked from CareView can be analyzed post-discharge to understand how a patient’s expectations met reality for independent living. Text messages and emails can be both recorded to see if the patient has viewed them and followed on with dynamic questions related to that specific patient. Care Messenger allows the care team to have a much deeper level of connection with a patient in a medium unobtrusive to a patient’s life. The effectiveness of text message alerts and reminders compared to emails or robo-calls is daunting. Text messages have over a 95% open rate compared to emails being close to 25%. The future of patient engagement is through mobile.')
+
+			//+product('Digital Discharge', './img/dd.jpg', 'Blah')
+			//+product('CareView Dashboard', './img/cv.jpg', 'Blah')
+			//+product('Care Messenger', './img/cm2.jpg', 'Blah')
+
+
+		include sections/footer.jade
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
+		script(src='./js/rotateText.js')
+		script(src='./js/easy-pie-chart.js')
+		script(src='./js/main.js')

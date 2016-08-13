@@ -1,0 +1,33 @@
+mixin testimonial(text, name, title)
+	.col.l4.s12
+		.card-panel= text
+			br
+			label= '- ' + name +', '+ title
+
+
+section.grey.lighten-3(style='width: 100%;padding: 60px 0px 80px 0px')
+	.container
+		.row.center
+			h4 Patients and Care Managers 
+				i.material-icons.pink-text(style='vertical-align: middle') favorite
+				|  Digital Discharge
+		//.row
+			.col.l4.s12
+				.card-panel Look! I just got the notification... It's like a friend from afar looking out for me :)
+					br
+					label - Louise, 71 Year Old Female Patient
+			.col.l4.s12
+				.card-panel These are the questions that needed to be asked
+					br
+					label - Karen, 54 Year Old Female Patient
+			.col.l4.s12: .card-panel
+			.col.l4.s12: .card-panel
+
+		.row
+			+testimonial("Look! I just got the notification... It's like a friend from afar looking out for me", 'Louise', '71 Year Old Female Patient')
+			+testimonial("These are the questions that needed to be asked", 'Karen', '54 Year Old Female Patient')
+			+testimonial("You got any more of these? It's a good way to pass the time", 'Robert', '71 Year Old Male Patient')
+		.row
+			+testimonial("I love this. Please keep bringing us more surveys. This is going to change the way we work for the better.", 'Kathy', 'Lead Pulmonary Nurse')
+			+testimonial("Care Suggestions allowed us to have a much richer dialogue about the issues my patients are facing.", 'Karen', 'Lead Social Worker')
+			+testimonial("We had a patient that was leaving against medical advice. After explaining the product and putting the tablet in front of him, he decided to stay...", 'Sally', 'Director of Care Management')
