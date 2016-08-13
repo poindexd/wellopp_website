@@ -42,6 +42,17 @@ nav{
 
 }
 
+
+.parallax-container {
+	height: 450px;
+}
+
+@media #{$medium-and-down}{
+	.parallax-container {
+		height: 250px;
+	}
+}
+
 @media #{$medium-and-up} {
 	nav.tall{
 		margin-bottom: 0px;
@@ -62,7 +73,6 @@ nav{
 		a.button-collapse i{
 			line-height: 128px;
 		}
-
 	}
 }
 
@@ -164,9 +174,7 @@ footer ul li a{
 
 }
 
-.parallax-container {
-	height: 450px;
-}
+
 
 .social{
 	padding-top: 1em;

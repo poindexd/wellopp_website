@@ -26,12 +26,18 @@
 			.card: .card-content
 				p.flow-text= description
 
-mixin header(name, url)
-	.parallax-container
+mixin header(name, url, small)
+	.parallax-container.hide-on-med-and-down
 		.parallax
 			img(src=url)
 		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
 			h4.white-text= name
+	.parallax-container.hide-on-large-only
+		.parallax
+			img(src=small)
+		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
+			h4.white-text= name
+
 
 mixin feature(title, icon)
 	.card: .card-content
@@ -77,7 +83,7 @@ html
 						h5 Digital Discharge
 						p ;lkajsd;lfkjsad;flkjads;lfkjasdf
 
-			+header('Digital Discharge', './img/dd.jpg')
+			+header('Digital Discharge', './img/dd.jpg', './img/dd_small.jpg')
 			.row
 				.col.s12.l4
 					+feature('Expert Content', 'school')
@@ -86,7 +92,7 @@ html
 				.col.s12.l8
 					+content('Digital Discharge provides software driven, interactive multimedia instructions to educate patients and streamline the discharge process for more efficient and effective discharge planning. Care teams save significant time and energy as the product automatically prepares a patient for discharge without any assistance or manual data entry necessary. Auditory, visual, and kinesthetic (touch) patient learning styles are supported to deliver greater patient engagement, understanding, and satisfaction. Empowering patients through self-driven, personalized education creates greater comprehension and, in turn, better outcomes. Digital Discharge has products focused on Diagnosis Related Groups for CHF, Diabetes, Pneumonia, COPD, General Wellness, Oncology (Scope ™), and Advanced Care Directives (CareChoice™).')
 
-			+header('CareView Dashboard', './img/cv.jpg')
+			+header('CareView Dashboard', './img/cv.jpg', './img/cv_small.jpg')
 			.row
 				.col.s12.l4
 					+feature('EMR Integration','equalizer')
@@ -95,7 +101,7 @@ html
 				.col.s12.l8
 					+content('Working in tandem with Digital Discharge, CareView Dashboard delivers patient reported outcome measures in the areas of psychosocial wellness such as support system, state of mind, medications, diet & physical activity, lifestyle, and compliance warning signs. Patients are questioned in each of these areas of their life during the Digital Discharge multimedia experience. Wellopp’s trade secret algorithm evaluates patient responses and feeds care suggestions to the CareView Dashboard. The analysis uncovers a more complete view of the patient’s entire health profile, physical and psychosocial, to inform care teams of the most effective and urgent risk areas to be addressed. Care teams discover the causal factors of patient diminished health before a personal interview and are therefore more prepared for them. Care plans focused on individualized patient needs being delivered in real-time before discharge will make the discharge episode central to improving patient outcomes.')
 
-			+header('Care Messenger', './img/cm2.jpg')
+			+header('Care Messenger', './img/cm2.jpg', './img/cm2_small.jpg')
 			.row
 				.col.s12.l4
 					+feature('Web & SMS', 'phone')
