@@ -31,5 +31,11 @@ function stats(){
     trackColor: '#ddd',
     scaleColor:false
   });
+
+  surveyCounter();
 }
 
+function surveyCounter(){
+  setTimeout(surveyCounter, Math.rand()*100);
+  $('#stats .percentage span').eq(0).html( new Date() );
+}

@@ -6319,3 +6319,7 @@ footer ul li a {
     -ms-filter: grayscale(0%);
     filter: grayscale(0%);
     transition-duration: 0.25s; }
+
+h4 sup {
+  top: -1.5em;
+  font-size: 0.3em; }
