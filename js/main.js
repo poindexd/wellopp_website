@@ -43,7 +43,7 @@ function stats(){
 			this.$el.find('span').text(Math.round(this.text * (value/this.percent))).digits();
 		},
 		onStop: function(value, to) {
-			this.$el.find('span').text(Math.round(this.text * (value/this.percent))).digits();
+			this.$el.find('span').text(Math.round(this.text)).digits();
 		},
 		//trackColor:'#143f52',
 		//trackColor: '#ffffff00',
@@ -52,10 +52,4 @@ function stats(){
 		scaleColor:false
 	});
 
-	surveyCounter();
-}
-
-function surveyCounter(){
-	setTimeout(surveyCounter, Math.rand()*100);
-	$('#stats .percentage span').eq(0).html( new Date() );
 }
