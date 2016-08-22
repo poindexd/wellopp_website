@@ -40,9 +40,9 @@ function stats(){
 			this.$el.find('span').text(Math.round(to)).digits();
 		},
 		//trackColor:'#143f52',
-		trackColor: '#ffffff00',
+		//trackColor: '#ffffff00',
 		barColor: '#ffffff00',
-		//trackColor: '#ddd',
+		trackColor: '#ddd',
 		scaleColor:false
 	});
 
