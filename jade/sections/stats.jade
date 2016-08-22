@@ -3,27 +3,27 @@ section#stats(style='position:absolute;bottom: 50px; width: 100%')
 		.row.hide-on-med-and-down
 			.col.m3.s6: .card.center
 				.chart
-					.percentage(data-percent='10000' data-bar-color='transparent' data-track-color='transparent')
+					.percentage(data-percent='100' data-text='10000' data-bar-color='#2196f3')
 						span 10000
 						sup +
 					p Patient Engagements
 
 			.col.m3.s6: .card.center
 				.chart
-					.percentage(data-percent='85', data-bar-color='green')
+					.percentage(data-percent='85' data-text='85' data-bar-color='green')
 						span 85
 						sup %
 					p Patient Satisfaction
 
 			.col.m3.s6: .card.center
 				.chart
-					.percentage(data-percent='29', data-bar-color='transparent' data-track-color='transparent')
+					.percentage(data-percent='50' data-text='29' data-bar-color='orange' data-scale-color='#ddd')
 						span 29
 					p Minutes Saved
 
 			.col.m3.s6: .card.center
 				.chart
-					.percentage(data-percent='47' data-bar-color='orange')
+					.percentage(data-percent='47' data-text='47' data-bar-color='red')
 						span 47
 						sup %
 					p Readmission Reduction
