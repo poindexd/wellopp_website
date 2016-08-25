@@ -2084,7 +2084,7 @@ ul {
 .z-depth-0 {
   box-shadow: none !important; }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav, .speak {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
@@ -6323,3 +6323,23 @@ footer ul li a {
 h4 sup {
   top: -1.5em;
   font-size: 0.3em; }
+
+.speak {
+  position: relative;
+  padding: 20px;
+  padding-right: 60px;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 80px; }
+  .speak:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 85%;
+    margin-left: -50px;
+    width: 0;
+    height: 0;
+    border-top: solid 50px black;
+    border-top-color: inherit;
+    border-left: solid 50px transparent;
+    border-right: solid 50px transparent; }
