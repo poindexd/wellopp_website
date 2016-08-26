@@ -6288,17 +6288,21 @@ footer ul li a {
     padding: 12px 12px 50px 12px;
     border-radius: 1px; }
 
-@media only screen and (min-width: 993px) {
-  #splash .rotate {
-    padding: 50px 0px 120px 0px; } }
-
-@media only screen and (max-width: 992px) {
-  #splash .rotate {
-    padding: 30px 0px 80px 0px; } }
-
 @media only screen and (max-width: 600px) {
   #splash .rotate {
     padding: 0px 0px 0px 0px; } }
+
+@media only screen and (min-width: 601px) {
+  #splash .rotate {
+    padding: 10px 0px 60px 0px; } }
+
+@media only screen and (min-width: 993px) {
+  #splash .rotate {
+    padding: 20px 0px 80px 0px; } }
+
+@media screen and (min-width: 1400px) {
+  #splash .rotate {
+    padding: 50px 0px 120px 0px; } }
 
 .social {
   padding-top: 1em; }
