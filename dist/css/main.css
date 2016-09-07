@@ -6178,8 +6178,7 @@ body {
 
 main {
   display: flex;
-  flex: 1 0 auto;
-  align-items: center; }
+  flex: 1 0 auto; }
 
 #stats {
   opacity: 0; }
@@ -6340,10 +6339,10 @@ h4 sup {
     position: absolute;
     top: 100%;
     left: 85%;
-    margin-left: -50px;
+    margin-left: -30px;
     width: 0;
     height: 0;
-    border-top: solid 50px black;
+    border-top: solid 30px black;
     border-top-color: inherit;
-    border-left: solid 50px transparent;
-    border-right: solid 50px transparent; }
+    border-left: solid 30px transparent;
+    border-right: solid 30px transparent; }
