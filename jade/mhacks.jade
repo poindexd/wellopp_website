@@ -14,13 +14,39 @@ html
 
 		main
 			.container
-				.speak.white-text(style='background: #2196f3; border-color: #2196f3')
-					.left
-						img(src='./img/logo-m.png' width='100')
-						br
-						img(src='./img/logo-text.png' width='100')
-					h1 Hello, Hackers
-				p.flow-text Welcome to MHacks.
+				.row
+					.speak.white-text(style='background: #2196f3; border-color: #2196f3')
+						.left
+							img(src='./img/logo-m.png' width='100')
+							br
+							img(src='./img/logo-text.png' width='100')
+						h1 Hello, Hackers
+					p.flow-text Welcome to MHacks!
+					p.flow-text We're excited to be here. Be sure to check out our coding challenge and job listings below. Dan and Jon will be at the booth through the night to answer questions and assist with all things tech.
+
+					p.right.flow-text - The Wellopp team
+				.row
+					.speak.white-text(style='background: #4caf50; border-color: #4caf50')
+						h4 Coding Challenge
+					h3.center Build a Wellness app or game
+					h5.center Prize: Beats by Dre Headphones
+
+					label Criteria
+					ul
+						li - Originality
+
+				.row
+					.speak.white-text(style='background: #ff9800; border-color: #ff9800')
+						h4 Job Listings
+					.row
+						.col.s12.l4
+							.card-panel
+								h5 UI/UX Developer
+								p Entry Level
+						.col.s12.l4
+							.card-panel
+								h5 Full-stack Developer
+								p Entry Level
 
 		include sections/footer.jade
 

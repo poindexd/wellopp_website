@@ -3,12 +3,12 @@ mixin header(name, url, small)
 		.parallax
 			img(src=url)
 		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
-			h4.white-text= name
+			h4.white-text !{name}
 	.parallax-container.hide-on-med-and-up
 		.parallax
 			img(src=small)
 		.center(style='position: absolute;bottom: 0px; width:100%; background:rgba(0,0,0,0.4)')
-			h4.white-text= name
+			h4.white-text !{name}
 
 
 mixin feature(title, icon)
@@ -18,7 +18,7 @@ mixin feature(title, icon)
 
 mixin content(text)
 	.card: .card-content
-		p !{text}
+		p.flow-text !{text}
 
 doctype html
 html
@@ -45,33 +45,36 @@ html
 
 		.container
 
-			+header('Digital Discharge / Wellscreen', './img/dd.jpg', './img/dd_small.jpg')
+			+header('Digital Discharge<sup>TM</sup> / Wellscreen<sup>TM</sup>', './img/dd.jpg', './img/dd_small.jpg')
 			.row
 				.col.s12.l4
-					+feature('Engagement & Satisfaction', 'sentiment_very_satisfied')
+					+feature('Triple Sensory', 'visibility')
+					+feature('Multilingual', 'question_answer')
 					+feature('Expert Content', 'school')
-					+feature('Educational Surveys', 'tablet')
+					+feature('Engagement & Satisfaction', 'sentiment_very_satisfied')
 				.col.s12.l8
-					+content('Digital Discharge&trade; provides software driven, interactive multimedia instructions to educate patients and streamline the discharge process for more efficient and effective discharge planning. Care teams save significant time and energy as the product automatically prepares a patient for discharge without any assistance or manual data entry necessary. Auditory, visual, and kinesthetic (touch) patient learning styles are supported to deliver greater patient engagement, understanding, and satisfaction. Empowering patients through self-driven, personalized education creates greater comprehension and, in turn, better outcomes. Digital Discharge has products focused on Diagnosis Related Groups for CHF, Diabetes, Pneumonia, COPD, General Wellness, Oncology (Scope&trade;), and Advanced Care Directives (CareChoice&trade;).')
+					+content("Wellscreen provides an interactive multimedia experience that engages users in an immersive educational environment. The platform combines powerful assessments with multi-sensory content. Care teams save significant time and energy by eliminating data entry, while the product prepares and informs the user. Auditory, visual, and kinesthetic (touch) learning styles are supported to deliver greater patient engagement, understanding, and satisfaction.")
 
 			+header('CarePath Dashboard', './img/cv.jpg', './img/cv_small.jpg')
 			.row
 				.col.s12.l4
-					+feature('Assess Risk','timeline')
-					+feature('Motivational Interviewing','question_answer')
+					+feature('Risk Assessments','timeline')
 					+feature('Social Health Profiles','people')
+					+feature('Personalized Care Plans', 'face')
+					+feature('Motivational Interviewing','question_answer')
 				.col.s12.l8
-					+content("Working in tandem with Digital Discharge, CarePath Dashboard delivers patient reported outcome measures in the areas of psychosocial wellness such as support system, state of mind, medications, diet & physical activity, lifestyle, and compliance warning signs. Patients are questioned in each of these areas of their life during the Digital Discharge multimedia experience. Wellopp's trade secret algorithm evaluates patient responses and feeds care suggestions to the CarePath Dashboard. The analysis uncovers a more complete view of the patient's entire health profile, physical and psychosocial, to inform care teams of the most effective and urgent risk areas to be addressed. Care teams discover the causal factors of patient diminished health before a personal interview and are therefore more prepared for them. Care plans focused on individualized patient needs being delivered in real-time before discharge will make the discharge episode central to improving patient outcomes.")
+					+content("The CarePath dashboard reveals the voice of the user or patient in a graphic display.  This intuitive design paints an accurate picture of the users social health vulnerabilities and challenges. Providers can easily evaluate and address psychosocial risk.  Expert suggestive content allows for the efficient and effective delivery of personalized care plans.  When the patient reported outcome measures are structured and quantified, the voids in the patient's world are illuminated.  Our algorithms uncover the most comprehensive social health view of the patient's risk factors.  This strategy allows providers to focus on care plans that truly meet patients where they are.")
 
 			+header('Care Messenger', './img/cm2.jpg', './img/cm2_small.jpg')
 			.row
 				.col.s12.l4
 					+feature('Digital Dialogues', 'question_answer')
-					+feature('Wellness Rewards', 'card_giftcard')
-					+feature('Web & SMS', 'phone')
+					+feature('Alert Status', 'announcement')
+					+feature('Medication Adherence', 'alarm')
+					+feature('Monitored Outreach', 'pan_tool')
 
 				.col.s12.l8
-					+content("Care Messenger sends personalized messages to patients by text or email for follow up post-discharge. Patients can respond to any type of question immediately through text or email and maintain an ongoing dialogue with their care team. Wellopp can analyze responses by patients to determine compliance likelihood and additional risk factors. Psychosocial questions previously asked from CareView can be analyzed post-discharge to understand how a patient's expectations met reality for independent living. Text messages and emails can be both recorded to see if the patient has viewed them and followed on with dynamic questions related to that specific patient. Care Messenger allows the care team to have a much deeper level of connection with a patient in a medium unobtrusive to a patient's life. The effectiveness of text message alerts and reminders compared to emails or robo-calls is daunting. Text messages have over a 95% open rate compared to emails being close to 25%. The future of patient engagement is through mobile.")
+					+content("Care Messenger sends personalized messages to patients by text, email, or robo-call. Patients and Providers create a digital dialogue that can be monitored for compliance.  Wellopp analyzes these interactions to determine the presence of additional risk factors. Alerts can be routed to ensure that high risk episodes are avoided.  The user receives an additional connection to their provider that supports their care plan and healthy habits. Our model stresses text messaging as the preferred form of communications. Text messages are read 98% of the time, while emails are read just 22% of the time.")
 
 			+header('Wellopp Rewards', './img/pp.jpg', './img/pp_small.jpg')
 			.row
@@ -80,7 +83,7 @@ html
 					+feature('Shared Goals', 'people')
 					+feature('Celebrate Success', 'cake')
 				.col.s12.l8
-					+content('With Wellopp Rewards, patients can earn points by following their care plan and responding to simple reminders. These points are redeemed for a prize the patient selected before their discharge. Choosing a prize up front ensures that incentives are aligned and the provider and patient are working towards a shared goal. We have spent far too much time lecturing patients about their care plan. Wellopp Rewards replaces the stick with a carrot. By allowing patients to choose their incentives and allowing them to join a shared goal system, we are allowing them to take control of sustained wellness.')
+					+content("With Wellopp Rewards, patients can earn points by following their care plan and interacting with a variety of applications. These points can be redeemed for prizes the user has chosen.  Choosing a goal and a prize up front ensures that incentives are aligned.  The provider and user are working towards a shared goal.  Wellopp Rewards replaces the stick with a carrot.  By listening to the patient's voice, we are allowing them to take control of a sustainable wellness path.")
 
 		include sections/footer.jade
 
