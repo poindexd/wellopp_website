@@ -1,0 +1,158 @@
+doctype html
+html
+	head
+		title Wellopp
+		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+		link(rel='stylesheet' href='./css/main.css')
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300,500|PT+Sans', type="text/css")
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		include include/tracking.jade
+		style.
+			.table .col{
+				line-height: 3rem;
+				height: 3rem;
+				white-space: nowrap;
+				overflow:hidden;
+				text-overflow: ellipsis;
+			}
+			.card-panel{
+				margin: 0em 0em 1em 0em;
+			}
+			.table .row:nth-child(even), .table .row:nth-child(even){
+				background: #eee;
+
+			}
+			input[type=number]{
+				height: 1.5rem;
+			}
+	body(ng-app='editor' ng-controller='controller')
+		include sections/nav.jade
+		.container
+			.row
+				.col.s12.l7
+					.speak.speak-left.white-text(style='background: #ff9800; border-color: #ff9800;margin-bottom: 40px')
+						h4 Our Solutions
+					img(src='/img/whatwedo.png' width='100%')
+					div(style='margin-right: 30px')
+						.speak.speak-right.white-text(style='background: #2196f3; border-color: #2196f3;margin-bottom: 40px')
+							h4 ROI Calculator
+				.col.s12.l5
+					//h5 ROI Calculator
+						.row(ng-repeat='line in lines')
+							.col.s8
+								{{line.text}}
+							.col.s4
+								input(type='number' ng-model='line.val' ng-disabled='!line.editable')
+								{{line.val | picker:line.filter}}
+								{{model[line.val] || $eval(line.val)}}
+					.card-panel.table
+						.row
+							.col.s8 Nurse Salary
+							.col.s4: input(type='number' ng-model='model.nurse_salary')
+						.row
+							.col.s8 Nurse pay per 20 minutes
+							.col.s4 {{model.nurse_salary / 6000 | currency:"$":0}}
+						.row
+							.col.s8 Discharges per year
+							.col.s4: input(type='number' ng-model='model.discharges_per_year')
+						.row
+							.col.s8 Annual labor cost of discharges
+							.col.s4 {{model.nurse_salary * model.discharges_per_year / 6000 | currency:"$":0}}
+						.row
+							.col.s8 Wellopp Costs per discharge
+							.col.s4: {{6 | currency:"$":0}}
+						.row
+							.col.s8 Wellopp's Wellscreen License
+							.col.s4 {{50000 | currency:"$":0}}
+						.row.green.lighten-2.white-text
+							.col.s8 Total Annual Labor Savings
+							.col.s4 {{(model.nurse_salary * model.discharges_per_year / 6000) - 50000  | currency:"$":0}}
+						.row.green.lighten-2.white-text
+							.col.s8 Total Annual Time Savings (hrs)
+							.col.s4 
+					.card-panel.table
+						.row
+							.col.s8 Annual DRG Discharges
+							.col.s4: input(type='number' ng-model='model.annual_drg_discharges')
+						.row
+							.col.s8 DRG Readmission Rate
+							.col.s4: input(type='number' ng-model='model.drg_readmission_rate')
+						.row
+							.col.s8 # of DRG patients readmitted
+							.col.s4 {{model.annual_drg_discharges * (model.drg_readmission_rate / 100)}}
+						.row
+							.col.s8 Hurley % Prevented
+							.col.s4 47
+						.row
+							.col.s8 # of Preventable Readmissions
+							.col.s4 {{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100)}}
+						.row
+							.col.s8 Cost Per Readmission
+							.col.s4: input(type='number' ng-model='model.cost_per_readmission')
+						.row
+							.col.s8 Cost if 100% Unreimbursed
+							.col.s4 {{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100) * model.cost_per_readmission | currency:"$":0}}
+						.row
+							.col.s8 Your % of Unreimbursed Patients
+							.col.s4: input(type='number' ng-model='model.your_unreimbursed_patients')
+						.row
+							.col.s8 Wellopp Annual License
+							.col.s4 {{50000 | currency:"$":0}}
+						.row.green.lighten-2.white-text
+							.col.s8 Annual Readmission Cost Savings
+							.col.s4 {{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100) * model.cost_per_readmission * (model.your_unreimbursed_patients/100) - 50000 | currency:"$":0}}
+
+		include sections/footer.jade
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
+		script(src='./js/easy-pie-chart.js')
+		script(src='./js/match-height.js')
+		script(src='./js/main.js')
+		script.
+			var editor = angular.module('editor', []);
+
+			editor.controller('controller', ['$scope', function($scope) {
+
+
+				$scope.model = {
+					nurse_salary: 60000,
+					discharges_per_year: 8000,
+					annual_drg_discharges: 300,
+					drg_readmission_rate: 21,
+					cost_per_readmission: 11200,
+					your_unreimbursed_patients: 70
+				}
+
+				$scope.lines = [
+				{
+					text: 'Annual Nurse Salary',
+					val: $scope.model.nurse_salary,
+					editable: true,
+					filter: 'currency:"$":0'
+
+				},
+				{
+					text: 'Nurse pay per 20 minutes',
+					val: $scope.model.nurse_salary/(6000),
+					editable: false,
+					filter: 'currency:"$":0'
+				},
+				{
+					text: 'Discharges Per Year',
+					val: $scope.model.discharges_per_year,
+					editable: true,
+					filter: 'number'
+				}
+
+				];
+
+			}]);
+
+			editor.filter('picker', function($interpolate ){
+					return function(){
+							var result = $interpolate('{{value | ' + arguments[1] + '}}');
+							return result({value:arguments[0]});
+					};
+			});

@@ -12,13 +12,16 @@ mixin header(name, url, small)
 
 
 mixin feature(title, icon)
-	.card: .card-content
-		p= title
-			i.grey-text.material-icons.left=icon
+	//-.card.white-text(class!=attributes.class): .card-content
+		strong= title
+			i.material-icons.left=icon
+	.card.grey-text: .card-content
+		strong= title
+			i.material-icons.left=icon
 
 mixin content(text)
-	.card: .card-content
-		p.flow-text !{text}
+	.card.content: .card-content
+		p !{text}
 
 doctype html
 html
@@ -26,7 +29,7 @@ html
 		title Wellopp
 		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
 		link(rel='stylesheet' href='./css/main.css')
-		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300|PT+Sans', type="text/css")
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300,500|PT+Sans', type="text/css")
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		include include/tracking.jade
 		
@@ -39,51 +42,55 @@ html
 				//text-indent: 2em;
 				text-align: justify;
 			}
+			.card.content p{
+				font-size:1.4em;
+			}
 
 	body
 		include sections/nav.jade
 
 		.container
+	
 
-			+header('Digital Discharge<sup>TM</sup> / Wellscreen<sup>TM</sup>', './img/dd.jpg', './img/dd_small.jpg')
-			.row
-				.col.s12.l4
-					+feature('Triple Sensory', 'visibility')
-					+feature('Multilingual', 'question_answer')
-					+feature('Expert Content', 'school')
-					+feature('Engagement & Satisfaction', 'sentiment_very_satisfied')
-				.col.s12.l8
-					+content("Wellscreen provides an interactive multimedia experience that engages users in an immersive educational environment. The platform combines powerful assessments with multi-sensory content. Care teams save significant time and energy by eliminating data entry, while the product prepares and informs the user. Auditory, visual, and kinesthetic (touch) learning styles are supported to deliver greater patient engagement, understanding, and satisfaction.")
+					+header('Digital Discharge<sup>TM</sup> / Wellscreen<sup>TM</sup>', './img/dd.jpg', './img/dd_small.jpg')
+					.row
+						.col.s12.l4
+							+feature('Triple Sensory', 'visibility')(class='blue lighten-1')
+							+feature('Multilingual', 'question_answer')(class='green lighten-1')
+							+feature('Expert Content', 'school')(class='orange lighten-1')
+							+feature('Engagement & Satisfaction', 'sentiment_very_satisfied')(class='purple accent-1')
+						.col.s12.l8
+							+content("Wellscreen provides an interactive multimedia experience that engages users in an immersive educational environment. The platform combines powerful assessments with multi-sensory content. Care teams save significant time and energy by eliminating data entry, while the product prepares and informs the user. Auditory, visual, and kinesthetic (touch) learning styles are supported to deliver greater patient engagement, understanding, and satisfaction.")
 
-			+header('CarePath Dashboard', './img/cv.jpg', './img/cv_small.jpg')
-			.row
-				.col.s12.l4
-					+feature('Risk Assessments','timeline')
-					+feature('Social Health Profiles','people')
-					+feature('Personalized Care Plans', 'face')
-					+feature('Motivational Interviewing','question_answer')
-				.col.s12.l8
-					+content("The CarePath dashboard reveals the voice of the user or patient in a graphic display.  This intuitive design paints an accurate picture of the users social health vulnerabilities and challenges. Providers can easily evaluate and address psychosocial risk.  Expert suggestive content allows for the efficient and effective delivery of personalized care plans.  When the patient reported outcome measures are structured and quantified, the voids in the patient's world are illuminated.  Our algorithms uncover the most comprehensive social health view of the patient's risk factors.  This strategy allows providers to focus on care plans that truly meet patients where they are.")
+					+header('CarePath Dashboard', './img/cv.jpg', './img/cv_small.jpg')
+					.row
+						.col.s12.l4
+							+feature('Risk Assessments','timeline')(class='blue lighten-1')
+							+feature('Social Health Profiles','people')(class='green lighten-1')
+							+feature('Personalized Care Plans', 'face')(class='orange lighten-1')
+							+feature('Motivational Interviewing','question_answer')(class='purple accent-1')
+						.col.s12.l8
+							+content("The CarePath dashboard reveals the voice of the user or patient in a graphic display.  This intuitive design paints an accurate picture of the users social health vulnerabilities and challenges. Providers can easily evaluate and address psychosocial risk.  Expert suggestive content allows for the efficient and effective delivery of personalized care plans.  When the patient reported outcome measures are structured and quantified, the voids in the patient's world are illuminated.  Our algorithms uncover the most comprehensive social health view of the patient's risk factors.  This strategy allows providers to focus on care plans that truly meet patients where they are.")
 
-			+header('Care Messenger', './img/cm2.jpg', './img/cm2_small.jpg')
-			.row
-				.col.s12.l4
-					+feature('Digital Dialogues', 'question_answer')
-					+feature('Alert Status', 'announcement')
-					+feature('Medication Adherence', 'alarm')
-					+feature('Monitored Outreach', 'pan_tool')
+					+header('Care Messenger', './img/cm2.jpg', './img/cm2_small.jpg')
+					.row
+						.col.s12.l4
+							+feature('Digital Dialogues', 'question_answer')(class='blue lighten-1')
+							+feature('Alert Status', 'announcement')(class='green lighten-1')
+							+feature('Medication Adherence', 'alarm')(class='orange lighten-1')
+							+feature('Monitored Outreach', 'pan_tool')(class='purple accent-1')
 
-				.col.s12.l8
-					+content("Care Messenger sends personalized messages to patients by text, email, or robo-call. Patients and Providers create a digital dialogue that can be monitored for compliance.  Wellopp analyzes these interactions to determine the presence of additional risk factors. Alerts can be routed to ensure that high risk episodes are avoided.  The user receives an additional connection to their provider that supports their care plan and healthy habits. Our model stresses text messaging as the preferred form of communications. Text messages are read 98% of the time, while emails are read just 22% of the time.")
+						.col.s12.l8
+							+content("Care Messenger sends personalized messages to patients by text, email, or robo-call. Patients and Providers create a digital dialogue that can be monitored for compliance.  Wellopp analyzes these interactions to determine the presence of additional risk factors. Alerts can be routed to ensure that high risk episodes are avoided.  The user receives an additional connection to their provider that supports their care plan and healthy habits. Our model stresses text messaging as the preferred form of communications. Text messages are read 98% of the time, while emails are read just 22% of the time.")
 
-			+header('Wellopp Rewards', './img/pp.jpg', './img/pp_small.jpg')
-			.row
-				.col.s12.l4
-					+feature('Aligned Incentives', 'card_giftcard')
-					+feature('Shared Goals', 'people')
-					+feature('Celebrate Success', 'cake')
-				.col.s12.l8
-					+content("With Wellopp Rewards, patients can earn points by following their care plan and interacting with a variety of applications. These points can be redeemed for prizes the user has chosen.  Choosing a goal and a prize up front ensures that incentives are aligned.  The provider and user are working towards a shared goal.  Wellopp Rewards replaces the stick with a carrot.  By listening to the patient's voice, we are allowing them to take control of a sustainable wellness path.")
+					+header('Wellopp Rewards', './img/pp.jpg', './img/pp_small.jpg')
+					.row
+						.col.s12.l4
+							+feature('Aligned Incentives', 'card_giftcard')(class='blue lighten-1')
+							+feature('Shared Goals', 'people')(class='green lighten-1')
+							+feature('Celebrate Success', 'cake')(class='orange lighten-1')
+						.col.s12.l8
+							+content("With Wellopp Rewards, patients can earn points by following their care plan and interacting with a variety of applications. These points can be redeemed for prizes the user has chosen.  Choosing a goal and a prize up front ensures that incentives are aligned.  The provider and user are working towards a shared goal.  Wellopp Rewards replaces the stick with a carrot.  By listening to the patient's voice, we are allowing them to take control of a sustainable wellness path.")
 
 		include sections/footer.jade
 

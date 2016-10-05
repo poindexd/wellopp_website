@@ -6173,12 +6173,16 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
+  font-weight: 300;
   background: #fbfbfb;
   opacity: 0; }
 
 main {
   display: flex;
   flex: 1 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300; }
 
 #stats {
   opacity: 0; }
@@ -6346,3 +6350,34 @@ h4 sup {
     border-top-color: inherit;
     border-left: solid 30px transparent;
     border-right: solid 30px transparent; }
+
+.speak.speak-left {
+  padding-left: 60px;
+  text-align: left; }
+  .speak.speak-left:after {
+    left: 15%; }
+
+.speak.speak-right {
+  margin-right: 40px; }
+  .speak.speak-right:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: 0px;
+    width: 0;
+    height: 0;
+    border-left: solid 30px black;
+    border-left-color: inherit;
+    border-top: solid 30px transparent;
+    border-bottom: solid 30px transparent; }
+
+ul.disc li {
+  list-style-type: disc; }
+  @media only screen and (max-width: 600px) {
+    ul.disc li {
+      margin-left: 15px; } }
+
+.card-panel ul.disc li {
+  margin-left: 15px; }

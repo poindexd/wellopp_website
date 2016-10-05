@@ -1,0 +1,86 @@
+<!DOCTYPE html><html><head><title>Wellopp</title><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="./css/main.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,500|PT+Sans" type="text/css"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-83155286-1', 'auto');
+ga('send', 'pageview');</script><style>.table .col{
+	line-height: 3rem;
+	height: 3rem;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.card-panel{
+	margin: 0em 0em 1em 0em;
+}
+.table .row:nth-child(even), .table .row:nth-child(even){
+	background: #eee;
+
+}
+input[type=number]{
+	height: 1.5rem;
+}</style></head><body ng-app="editor" ng-controller="controller"><nav class="tall transparent"><div class="container"><div class="nav-wrapper"><a href="index.html" class="brand-logo"><img src="./img/logo.svg"></a><a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a><ul id="top-nav" class="right hide-on-med-and-down"><li><a href="/">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li></ul><ul id="side-nav" class="side-nav"><li><a href="/">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li></ul></div></div></nav><div class="container"><div class="row"><div class="col s12 l7"><div style="background: #ff9800; border-color: #ff9800;margin-bottom: 40px" class="speak speak-left white-text"><h4>Our Solutions</h4></div><img src="/img/whatwedo.png" width="100%"><div style="margin-right: 30px"><div style="background: #2196f3; border-color: #2196f3;margin-bottom: 40px" class="speak speak-right white-text"><h4>ROI Calculator</h4></div></div></div><div class="col s12 l5"><!--h5 ROI Calculator.row(ng-repeat='line in lines')
+	.col.s8
+		{{line.text}}
+	.col.s4
+		input(type='number' ng-model='line.val' ng-disabled='!line.editable')
+		{{line.val | picker:line.filter}}
+		{{model[line.val] || $eval(line.val)}}--><div class="card-panel table"><div class="row"><div class="col s8">Nurse Salary</div><div class="col s4"><input type="number" ng-model="model.nurse_salary"></div></div><div class="row"><div class="col s8">Nurse pay per 20 minutes</div><div class="col s4">{{model.nurse_salary / 6000 | currency:"$":0}}</div></div><div class="row"><div class="col s8">Discharges per year</div><div class="col s4"><input type="number" ng-model="model.discharges_per_year"></div></div><div class="row"><div class="col s8">Annual labor cost of discharges</div><div class="col s4">{{model.nurse_salary * model.discharges_per_year / 6000 | currency:"$":0}}</div></div><div class="row"><div class="col s8">Wellopp Costs per discharge</div><div class="col s4">{{6 | currency:"$":0}}</div></div><div class="row"><div class="col s8">Wellopp's Wellscreen License</div><div class="col s4">{{50000 | currency:"$":0}}</div></div><div class="row green lighten-2 white-text"><div class="col s8">Total Annual Labor Savings</div><div class="col s4">{{(model.nurse_salary * model.discharges_per_year / 6000) - 50000  | currency:"$":0}}</div></div><div class="row green lighten-2 white-text"><div class="col s8">Total Annual Time Savings (hrs)</div><div class="col s4"> </div></div></div><div class="card-panel table"><div class="row"><div class="col s8">Annual DRG Discharges</div><div class="col s4"><input type="number" ng-model="model.annual_drg_discharges"></div></div><div class="row"><div class="col s8">DRG Readmission Rate</div><div class="col s4"><input type="number" ng-model="model.drg_readmission_rate"></div></div><div class="row"><div class="col s8"># of DRG patients readmitted</div><div class="col s4">{{model.annual_drg_discharges * (model.drg_readmission_rate / 100)}}</div></div><div class="row"><div class="col s8">Hurley % Prevented</div><div class="col s4">47</div></div><div class="row"><div class="col s8"># of Preventable Readmissions</div><div class="col s4">{{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100)}}</div></div><div class="row"><div class="col s8">Cost Per Readmission</div><div class="col s4"><input type="number" ng-model="model.cost_per_readmission"></div></div><div class="row"><div class="col s8">Cost if 100% Unreimbursed</div><div class="col s4">{{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100) * model.cost_per_readmission | currency:"$":0}}</div></div><div class="row"><div class="col s8">Your % of Unreimbursed Patients</div><div class="col s4"><input type="number" ng-model="model.your_unreimbursed_patients"></div></div><div class="row"><div class="col s8">Wellopp Annual License</div><div class="col s4">{{50000 | currency:"$":0}}</div></div><div class="row green lighten-2 white-text"><div class="col s8">Annual Readmission Cost Savings</div><div class="col s4">{{model.annual_drg_discharges * (model.drg_readmission_rate / 100) *(47/100) * model.cost_per_readmission * (model.your_unreimbursed_patients/100) - 50000 | currency:"$":0}}</div></div></div></div></div></div><footer class="page-footer grey lighten-3"><div class="container"><div class="row"><div style="padding: 15px" class="col s12 l6"><!--img(src='./img/logo_grey.svg' width='150')--><!--br--><!--label Wellness = Opportunity--><div class="social"><a href="https://facebook.com/wellopp"><img src="./img/facebook-logo-button.svg"></a><a href="https://twitter.com/wellopphealth"><img src="./img/twitter-logo-button.svg"></a><a href="https://www.linkedin.com/company/wellopp"><img src="./img/linkedin-logo-button.svg"></a></div></div><!--.col.s6.l3h5 Links
+ul
+	li: a(href='/') Home
+	li: a(href='products.html') Products
+	li: a(href='#') Blog--><!--.col.s6.l3h5 Company
+ul
+	li: a(href='#') About
+	li: a(href='#') Team
+	li: a(href='#') Careers--><!--.col.s6.l3h5 Social
+ul
+	li: a(href='#') Twitter
+	li: a(href='#') LinkedIn
+	li: a(href='#') Facebook
+--></div></div><div class="footer-copyright grey lighten-3 grey-text"><div class="container">&copy; 2016 Wellopp<div class="right"><a href="/terms.html" class="grey-text">Terms</a></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script><script src="./js/easy-pie-chart.js"></script><script src="./js/match-height.js"></script><script src="./js/main.js"></script><script>var editor = angular.module('editor', []);
+
+editor.controller('controller', ['$scope', function($scope) {
+
+
+	$scope.model = {
+		nurse_salary: 60000,
+		discharges_per_year: 8000,
+		annual_drg_discharges: 300,
+		drg_readmission_rate: 21,
+		cost_per_readmission: 11200,
+		your_unreimbursed_patients: 70
+	}
+
+	$scope.lines = [
+	{
+		text: 'Annual Nurse Salary',
+		val: $scope.model.nurse_salary,
+		editable: true,
+		filter: 'currency:"$":0'
+
+	},
+	{
+		text: 'Nurse pay per 20 minutes',
+		val: $scope.model.nurse_salary/(6000),
+		editable: false,
+		filter: 'currency:"$":0'
+	},
+	{
+		text: 'Discharges Per Year',
+		val: $scope.model.discharges_per_year,
+		editable: true,
+		filter: 'number'
+	}
+
+	];
+
+}]);
+
+editor.filter('picker', function($interpolate ){
+		return function(){
+				var result = $interpolate('{{value | ' + arguments[1] + '}}');
+				return result({value:arguments[0]});
+		};
+});</script></body></html>

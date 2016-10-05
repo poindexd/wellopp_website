@@ -4,10 +4,19 @@ html
 		title Wellopp
 		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
 		link(rel='stylesheet' href='./css/main.css')
-		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300|PT+Sans', type="text/css")
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:300, 700|PT+Sans', type="text/css")
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		include include/tracking.jade
-
+		style.
+			strong{
+				font-weight: 700;
+			}
+			ul.disc{
+					margin-left:15px;
+			}
+			.card-panel ul.disc{
+					margin-left: 0px;
+			}
 
 	body
 		include sections/nav.jade
@@ -22,31 +31,175 @@ html
 							img(src='./img/logo-text.png' width='100')
 						h1 Hello, Hackers
 					p.flow-text Welcome to MHacks!
-					p.flow-text We're excited to be here. Be sure to check out our coding challenge and job listings below. Dan and Jon will be at the booth through the night to answer questions and assist with all things tech.
+					p.flow-text We're excited to be here. Be sure to check out our coding challenge, bonus prizes, and job listings below. Dan and Jon will be at the booth through the night to answer questions and assist with all things tech.
 
 					p.right.flow-text - The Wellopp team
+				br
 				.row
 					.speak.white-text(style='background: #4caf50; border-color: #4caf50')
 						h4 Coding Challenge
-					h3.center Build a Wellness app or game
-					h5.center Prize: Beats by Dre Headphones
+					.parallax-container(style='top:-80px; margin-bottom: -80px')
+						.parallax
+							img(src='img/rocks.jpg')
+							.center(style='position: absolute;top: 50%; transform:translateY(-50%);width:100%; ')
+								h3 Build a Wellness App or Game
+								h5 (Web, Native, or Hybrid)
+								h5 Prize: Samsung Galaxy A 8" Tablet
+								br
 
-					label Criteria
-					ul
-						li - Originality
+					br
+					.col.s12.l6
+						h5 Examples
+						ul.disc
+							li A motivational app that tracks your physical and/or emotional well-being
+							li An app where a user can set a goal and it will generate tiny behaviors that lead to it
+							li An app that creates a sense of community among those who are lonely
+							li A game where you can physically attack cancer or similar disease
+							li A top-level interface for hospital bedside tablets that can be used to navigate surveys, information, games, entertainment, etc.
 
+					.col.s12.l3
+						h5 Judging Criteria
+						ul.disc
+							li Creativity
+							li Relevance
+							li Originality
+							li Completeness
+
+					.col.s12.l3
+						h5 Bonus Points
+						ul.disc
+							li Create a web browser game that can be played on a tablet by our patients in the hospital
+							li Build something in React Native
+
+				br
 				.row
 					.speak.white-text(style='background: #ff9800; border-color: #ff9800')
-						h4 Job Listings
+						h4 Bonus Prizes
+
+					//.row.center
+						p (The awards are the origami heads shown in the pictures.)
+						
+					.row.calign
+						.col.s12.l3.m6
+							.card
+								.card-image
+									img(src='./img/panda.jpg')								
+								.card-content
+									p <strong>Social Panda:</strong> Introduce yourself! Say hi at our booth, then send us an email. Include your name, school, and tell us about 3 goals you have. Winner will be chosen randomly.
+						.col.s12.l3.m6
+							.card
+								.card-image
+									img(src='./img/fox.jpg')
+								.card-content
+									p <strong>Meme Fox:</strong> Our team loves to communicate with memes and gifs. Give us some new memes, plz. Our team will vote on our favorite. You may submit between 1-5 memes.
+
+						.col.s12.l3.m6
+							.card
+								.card-image
+									img(src='./img/deer.jpg')  
+								.card-content
+									p <strong>Lone Deer:</strong> It takes courage to work alone. Show us that you are a strong, independent person that doesn't need a team to get the job done. Awarded to the best solo project.
+
+						.col.s12.l3.m6
+							.card
+								.card-image
+									img(src='./img/horse.jpg')
+								.card-content
+									p <strong>Work Horse:</strong> Did one of your teammates go above and beyond? Did they stay up all night while everyone else took a nap? Send us an email telling us why they deserve this award.
 					.row
+						.col.s12
+							.card-panel.center
+								p.flow-text Send all entries/nominations to dan@wellopp.com with the subject "MHacks Awards"
+								p.flow-text Prizes are the origami wall art kits pictured.
+
+				br
+				.row
+					.speak.white-text(style='background: #9575cd; border-color: #9575cd ')
+						h4 Join Us
+
+					.row
+						.col.s12.l8
+							h5 Life At Wellopp
+							p We are a rapidly growing healthcare technology startup with over 20 employees. We have offices in Toledo OH, Nashville TN, and Palo Alto CA, but also meet up around Ann Arbor MI. We are very relaxed, and work pretty flexible hours. As with any startup, the problems we are working on are very fresh.
+
+							p The dev team works remotely 3-4 days a week. Once a week, they carpool down to our main office in Toledo. On Wednesdays, the team usually meets in Ann Arbor at Zingermans, the world famous delicatessan. Lunch is always provided, sometimes other meals as well.
+
+						.col.s12.l4
+							h5 Some Perks
+							ul.disc
+								li Work remote 3-4 days per week
+								li Flexible hours
+								li Free meals
+								li Retreats to scenic places such as Las Vegas, Leelanau Peninsula, Mammoth Lakes, etc.
+								li Surprise activities such as yacht rides, private chefs, and wine tours
+								li Professional development courses and opportunities to travel
+							h5 Most importantly...
+							ul.disc
+								li Build software that improves and saves lives
+				
+				br
+				.row
+					.speak.white-text(style='background: #4dd0e1; border-color: #4dd0e1')
+						h4 Open Positions
+
+					.row.calign
 						.col.s12.l4
 							.card-panel
-								h5 UI/UX Developer
-								p Entry Level
+								h5 Front-End Developer
+								p Entry Level / Intern
+								h6 Requirements
+								ul.disc
+									li Minimum 3 years experience with HTML, JS, CSS
+									li Digital portfolio of previous work that demonstrates elegant design, attention to detail, and proper implementation
+									li Prior experience in Angular, React, or other client-side framework
+									li Able to manipulate raster and vector graphics
+									li Comfortable with git
+									
+
+								h6 Bonus
+								ul.disc
+									li Experience with Jade (Pug), Sass, or other HTML/CSS preprocessors
+									li Familiarity with Gulp
+									li Experience in a backend framework such as Node
+
 						.col.s12.l4
 							.card-panel
-								h5 Full-stack Developer
-								p Entry Level
+								h5 Full-Stack Developer
+								p Entry Level / Intern
+								h6 Requirements
+								ul.disc
+									li Minimum 3 years experience with HTML, JS, CSS
+									li Minimum 3 years experience with Node, Ruby, or other backend framework
+									li Comfortable with linux, CLI, and configuring remote servers
+									li Prior experience architecting SQL/NoSQL databases and REST APIs
+									li Prior experience in Angular, React, or other client-side framework
+									li Comfortable with git
+
+								h6 Bonus
+								ul.disc
+									li Experience building native or hybrid apps
+
+						.col.s12.l4
+							.card-panel
+								h5 Data Scientist
+								p Entry Level / Intern
+								h6 Requirements
+								ul.disc
+									li Abilty to understand complex analytical solutions
+									li Experience building logistic and linear regression models
+									li Able to produce data vizualizations and summaries as requested by the business team
+									li Experience with SQL, R, Python or similar languages
+									li Experience working in Linux environment preferred
+								h6 Bonus
+								ul.disc
+									li Experience working with a cloud platform such as Cloudera or Databricks
+									li Experience applying Machine Learning in real-world situations across multiple data sources
+					.row
+						.col.s12
+							.card-panel.center
+								p.flow-text Send your resumes to dan@wellopp.com.
+
+								p We want to get to know you, so include an introduction telling us about your interests, experience, and goals.
 
 		include sections/footer.jade
 
@@ -54,4 +207,5 @@ html
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
 		script(src='./js/rotateText.js')
 		script(src='./js/easy-pie-chart.js')
+		script(src='./js/match-height.js')
 		script(src='./js/main.js')

@@ -5,6 +5,12 @@ $(document).ready(function() {
 	$('body').fadeTo(500, 1, function(){
 		stats();
 	});
+	//$(window).resize(function(){
+		//alignColumns();
+	//});
+	$('.calign-2 .card').matchHeight({byRow:false});
+	$('.calign .card-panel').matchHeight({byRow:false});
+	$('.calign .card').matchHeight({byRow:true});
 	$('#submit').on('click', function (e) {
 			e.preventDefault();
 			$(this).addClass('disabled');
@@ -17,13 +23,24 @@ $(document).ready(function() {
 					}
 			});
 	});
-		
+	//alignColumns();
 });
 
 $.fn.digits = function(){ 
 		return this.each(function(){ 
 				$(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
 		})
+}
+
+function alignColumns(){
+	$('.calign').each(function(){
+		var height = Math.max($(this).find('.col').map(function(el){
+			return $(el).height();
+		}));
+		$(this).find('.col').each(function(){
+			$(this).height(height);
+		})
+	});
 }
 
 function stats(){
