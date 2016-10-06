@@ -17,6 +17,9 @@ html
 			.card-panel ul.disc{
 					margin-left: 0px;
 			}
+			.parallax{
+				height: 175px;
+			}
 
 	body
 		include sections/nav.jade
@@ -42,9 +45,9 @@ html
 						.parallax
 							img(src='img/rocks.jpg')
 							.center(style='position: absolute;top: 50%; transform:translateY(-50%);width:100%; ')
-								h3 Build a Wellness App or Game
+								h4 Build a Wellness App or Game
 								h5 (Web, Native, or Hybrid)
-								h5 Prize: Acer 10" Tablet
+								h5 Prize: Samsung Galaxy A 8" Tablet
 								br
 
 					br
@@ -53,6 +56,7 @@ html
 						ul.disc
 							li A motivational app that tracks your physical and/or emotional well-being
 							li An app where a user can set a goal and it will generate tiny behaviors that lead to it
+							li An app that creates a sense of community among those who are lonely
 							li A game where you can physically attack cancer or similar disease
 							li A top-level interface for hospital bedside tablets that can be used to navigate surveys, information, games, entertainment, etc.
 
@@ -119,11 +123,9 @@ html
 					.row
 						.col.s12.l8
 							h5 Life At Wellopp
-							p At Wellopp, wellness = opportunity. We are improving outcomes by engaging each patient and personalizing their most effective path to wellness. Our products cover everything from risk assessment to wellness rewards.
+							p We are a rapidly growing healthcare technology startup with over 20 employees. We have offices in Toledo OH, Nashville TN, and Palo Alto CA, but also meet up around Ann Arbor MI. We are very relaxed, and work pretty flexible hours. As with any startup, the problems we are working on are very fresh.
 
-							p We are a rapidly growing healthcare technology startup with over 20 employees. We have offices in Toledo OH and Palo Alto CA, but also meet up around Ann Arbor MI. The dev team works remotely, but once a week, they carpool down to our main office in Toledo. On Wednesdays, the team usually meets in Ann Arbor at Zingermans, the world famous delicatessan. We like to mix up the schedule, and we occasionally meet at other coffee shops around the city.
-
-							p At Wellopp, you'll have the opportunity to work in a small team, gain valuable startup experience, and write beautiful software. We are working on several new products, some of which haven't been written yet. Starting on your first day, you'll be thrown into the creative process and write production code.  Your work will have an immediate impact on patients and caregivers. 
+							p The dev team works remotely 3-4 days a week. Once a week, they carpool down to our main office in Toledo. On Wednesdays, the team usually meets in Ann Arbor at Zingermans, the world famous delicatessan. Lunch is always provided, sometimes other meals as well.
 
 						.col.s12.l4
 							h5 Some Perks
@@ -133,7 +135,7 @@ html
 								li Free meals
 								li Retreats to scenic places such as Las Vegas, Leelanau Peninsula, Mammoth Lakes, etc.
 								li Surprise activities such as yacht rides, private chefs, and wine tours
-								li Professional development courses and opportunities to travel around the country
+								li Professional development courses and opportunities to travel
 							h5 Most importantly...
 							ul.disc
 								li Build software that improves and saves lives
@@ -148,61 +150,23 @@ html
 							.card-panel
 								h5 Front-End Developer
 								p Entry Level / Intern
-								h6 Requirements
-								ul.disc
-									li Minimum 3 years experience with HTML, JS, CSS
-									li Digital portfolio of previous work that demonstrates elegant design, attention to detail, and proper implementation
-									li Prior experience in Angular, React, or other client-side framework
-									li Able to manipulate raster and vector graphics
-									li Comfortable with git
-									
-
-								h6 Bonus
-								ul.disc
-									li Experience with Jade (Pug), Sass, or other HTML/CSS preprocessors
-									li Familiarity with Gulp
-									li Experience in a backend framework such as Node
 
 						.col.s12.l4
 							.card-panel
 								h5 Full-Stack Developer
 								p Entry Level / Intern
-								h6 Requirements
-								ul.disc
-									li Minimum 3 years experience with HTML, JS, CSS
-									li Minimum 3 years experience with Node, Ruby, or other backend framework
-									li Comfortable with linux, CLI, and configuring remote servers
-									li Prior experience architecting SQL/NoSQL databases and REST APIs
-									li Prior experience in Angular, React, or other client-side framework
-									li Comfortable with git
-
-								h6 Bonus
-								ul.disc
-									li Experience building native or hybrid apps
 
 						.col.s12.l4
 							.card-panel
 								h5 Data Scientist
 								p Entry Level / Intern
-								h6 Requirements
-								ul.disc
-									li Abilty to understand complex analytical solutions
-									li Experience building logistic and linear regression models
-									li Able to produce data vizualizations and summaries as requested by the business team
-									li Experience with SQL, R, Python or similar languages
-									li Experience working in Linux environment preferred
-								h6 Bonus
-								ul.disc
-									li Experience working with a cloud platform such as Cloudera or Databricks
-									li Experience applying Machine Learning in real-world situations across multiple data sources
+
 					.row
 						.col.s12
 							.card-panel.center
 								p.flow-text Send your resumes to dan@wellopp.com.
 
 								p We want to get to know you, so include an introduction telling us about your interests, experience, and goals.
-
-		include sections/footer.jade
 
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
