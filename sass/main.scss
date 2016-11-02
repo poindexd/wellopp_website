@@ -15,7 +15,7 @@ main {
 	display: flex;
 	flex: 1 0 auto;
 	//align-content: center;
-	//align-items: center;
+	align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -277,4 +277,112 @@ ul.disc li{
 
 .card-panel ul.disc li{
 	margin-left: 15px;
+}
+
+
+// BUTTERFLY LOGO
+$height: 110px;
+$width: 110px;
+$bg-color: #fefefe;
+$wings-separation: 5px;
+$svg-per: 70%;
+$bg-color--ebfblue: rgb(0, 120, 191);
+
+.butterfly {
+  position: relative;
+  height: $height;
+  width: $width;
+  border-radius: 50%;
+  background-color: $bg-color;
+  //background-image: url("http://www.transparenttextures.com/patterns/scribble-light.png");
+  //border: 5px solid darken($bg-color, 20);
+  margin: 40 auto;
+  box-shadow: 0 9px 12px rgba(0,0,0,.25), 0 3px 6px rgba(0,0,0,0.16);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  // obfuscate the texture bg
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    //background-color: rgba(0,0,0,0.1);
+  }
+}
+
+//BUTTERFLY LOGO
+
+$speed: 40s;
+
+#butterfly {
+  margin: 0 auto;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px;
+  #wing-orange {
+    transform-origin: 0% 100%;
+    animation: flap-back $speed infinite;
+  }
+  #wing-magenta {
+    transform-origin: 0% 80%;
+    animation: flap-front $speed infinite;
+  }
+  #wing-green {
+    transform-origin: 100% 100%;
+    animation: flap-back $speed infinite;
+  }
+  #wing-yellow {
+    transform-origin: 100% 96%;
+    animation: flap-front $speed infinite;
+  }
+  @keyframes flap-back {
+    0%,
+    23%,
+    27%,
+    88%,
+    96%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(1, .45) rotate(8deg);
+    }
+    90%,
+    94% {
+      transform: scale(1, .85) rotate(7deg);
+    }
+    92% {
+      transform: scale(1, .95) rotate(8deg);
+    }
+  }
+  @keyframes flap-front {
+    0%,
+    23%,
+    27%,
+    88%,
+    96%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(1, .25) rotate(-7deg);
+    }
+    90%,
+    94% {
+      transform: scale(1, .65) rotate(-6deg);
+    }
+    92% {
+      transform: scale(1, .75) rotate(-7deg);
+    }
+  }
 }
