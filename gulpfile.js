@@ -17,9 +17,9 @@ gulp.task('server', function() {
 
 gulp.task('compress', function() {
   gulp.src('./js/*.js')
-    //.pipe(uglify({
-    //  preserveComments: 'license'
-    //}).on('error', console.error.bind(console)))
+    .pipe(uglify({
+      preserveComments: 'license'
+    }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -43,7 +43,7 @@ gulp.task('watch', function() {
 
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./dist/css'));
 });
 

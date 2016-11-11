@@ -4,13 +4,14 @@ $(document).ready(function() {
 	$('.slider').slider({full_width: true, height:400, transition: 2000, interval: 8000});
 	$('body').fadeTo(500, 1, function(){
 		stats();
+		$('.calign-2 .card').matchHeight({byRow:false});
+		$('.calign .card-panel').matchHeight({byRow:false});
+		$('.calign .card').matchHeight({byRow:true});
 	});
 	//$(window).resize(function(){
 		//alignColumns();
 	//});
-	$('.calign-2 .card').matchHeight({byRow:false});
-	$('.calign .card-panel').matchHeight({byRow:false});
-	$('.calign .card').matchHeight({byRow:true});
+
 	$('#submit').on('click', function (e) {
 			e.preventDefault();
 			$(this).addClass('disabled');
