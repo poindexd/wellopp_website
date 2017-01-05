@@ -18,16 +18,25 @@ html
 			footer.page-footer{
 				margin-top: 0px;
 			}
+			h1{
+				font-size: 200px;
+				color: #5a5a5a;
+			}
+			h2{
+				font-size: 75px;
+				color: #5a5a5a;
+			}
 
 	body
 		include sections/nav.jade
 
-		main(style='background-image: url("./img/logo_butterfly_only.svg"); background-size: cover;    background-position: 50% 75%;')
+		main(style='background-image: url("./img/sky_bg.svg"); background-size: cover;    background-position: 50% 40%;')
 			.container.center
 				//.speak.white-text(style='background: #2196f3; border-color: #2196f3')
 					h3 404 - Not Found
-				.card-panel
-					h3 404 - Not Found
+				h1 404
+				h2 Not Found
+				.card-panel(style='margin-top: 100px')
 					p.flow-text The page you are looking for could not be found. Please use the links at the top to return to our website.
 
 		include sections/footer.jade
