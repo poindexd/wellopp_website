@@ -1,17 +1,19 @@
-mixin member(name, role, url, bio, c)
-	.col.s12.m6.l3(style='padding: 20px 0px 0px 0px')
-		img.circle(src=url height='150' width='150' class=c style='background:#fff;')
+mixin member(name, role, learning_style, url, bio, c)
+	.col.s12.m6.l3(style='padding: 20px 0px 0px 0px; min-height:290px;')
+		img.circle(src=url height='150' width='150' class=c style='background:#fff; box-shadow: 0px 0px 2px #aaa;')
 		h5= name
-		//h6.black-text= role
+		label.black-text= role
+		label.learning-style(style='display:block; color:#707070;')= learning_style + ' Learner'
 		//p(style='text-align:justify;padding:5px')=bio
 
-mixin advisor(name, role, url, bio, c)
-	.col.s12.l12(style='padding: 20px 0px')
+mixin advisor(name, role, learning_style, url, bio, c)
+	.col.s12.l12(style='padding: 20px 0px; min-height:290px;')
 		.row
 			.col.l4.s12(style='padding-top:1em')
-				img.responsive-image.circle(src=url height='150' width='150' class=c)
+				img.responsive-image.circle(src=url height='150' width='150' class=c style='background:#fff; box-shadow: 0px 0px 2px #aaa;')
 				p= name
 				label.black-text= role
+				label.learning-style(style='display:block; color:#707070;')= learning_style + ' Learner'
 			.col.l8.s12
 				p(style='text-align:justify;')=bio
 
@@ -32,36 +34,42 @@ html
 				//h4 Our Team
 				//.divider
 				.row
-					+member('Joe Gough', 'CEO', './team/Joe Gough.png')
-					+member('Thomas Lauzon', 'President', './team/Tom Lauzon Sr.png')
-					+member('James Weber MD', 'CMO', './team/Dr James Weber.png')
+					+member('Joe Gough', 'CEO & Founder', 'Kinesthetic', './team/Joe Gough.png')
+					+member('Tom Lauzon', 'President', 'Auditory', './team/Tom Lauzon Sr.png')
+					//-+member('James Weber MD', 'CMO', './team/Dr James Weber.png')
 					
-					+member('Mico Malecki', 'CTO', './team/Mico Malecki.png')
-					+member('Jon Wiedmann', 'CIO', './team/Jon Wiedmann.png')
+					+member('Mico Malecki', 'CTO', 'Kinesthetic', './team/Mico Malecki.png')
+					+member('Jon Wiedmann', 'CIO', 'Visual', './team/Jon Wiedmann.png')
 					
-					+member('Thomas Lauzon II', 'VP of Finance', './team/Tom Lauzon Jr.png')
-					+member('Steve Woolf', 'Director of Oncology Solutions', './team/Steve Woolf.png')
-					+member('Kristen Gough', 'Director of Human Resources & Logistics', './team/Kristen Gough.png')
-					+member('Brandon Cohen', 'Counsel', './team/Brandon Cohen.png', '','brandon')
-					+member('Eric Holmes', 'Not Sure', './team/Eric Holmes.png')
-					//-+member('Dianne Gray', 'IDK', './team/dianne.jpg')
+					+member('Tom Lauzon II', 'VP Finance', 'Auditory', './team/Tom Lauzon Jr.png')
+					+member('Steve Woolf', 'Director of Social Health & VP Oncology Services', 'Kinesthetic', './team/Steve Woolf.png')
+					+member('Kristen Gough', 'Director of Quality', 'Auditory', './team/Kristen Gough.png')
+					+member('Brandon Cohen', 'Chief Legal Officer & General Counsel', 'Visual', './team/Brandon Cohen.png', '','brandon')
+					+member('Eric Holmes', 'VP Operations', 'Auditory', './team/Eric Holmes.png')
+					
+					+member('Nicole Ashley', 'Director of Strategic Partnerships & VP of Business Development', 'Auditory', './team/Nicole-Ashley.png')
 
-					+member('Steve Fentriss', 'Developer', './team/Steve Fentriss.png')
-					+member('Nick Gronow', 'Developer', './team/Nick Gronow.png')
-					
+					+member('Randy Blake', 'Goalkeeper', 'Auditory', './team/Randy-Blake.png')
+
+					+member('Kelly Mahoney', 'Web Design and Development', 'Visual',  './team/Kelly-Mahoney.png')
+
+					+member('Steve Fentriss', 'Product Leader', 'Auditory', './team/Steve Fentriss.png')
+					+member('Nick Gronow', 'Product Leader', 'Visual', './team/Nick Gronow.png')
+		
+		
 					//-+member('Winston Tsang', 'Developer', './team/person.jpg')
-					+member('Jacob Shreve', 'Developer', './team/Jacob Shreve.png')
-					+member('Dan Poindexter', 'Developer', './team/Dan Poindexter.png')
-					+member('Renae Isaac', 'Executive Assistant', './team/Renae Issac.png')
+					+member('Jacob Shreve', 'Product Leader', 'Visual', './team/Jacob Shreve.png')
+					+member('Dan Poindexter', 'Product Leader', 'Visual', './team/Dan Poindexter.png')
+					+member('Renae Isaac', 'Executive Assistant', 'Visual', './team/Renae Issac.png')
 
 		.container.center(style='padding: 100px 0px')
 			h4 Our Advisors
 			.divider
 			.row
-					+advisor('Brian Athey, Ph.D.', 'Advisory Board Chair', './team/brian_athey.jpg', "Brian D. Athey, Ph.D. is the Michael A. Savageau Collegiate Professor and Inaugural Chair of the Department of Computational Medicine and Bioinformatics at the University of Michigan Medical School. He is also a Professor of Psychiatry and of Internal Medicine. He is the founding Principal Investigator of the NIH National Center for Integrative Biomedical Informatics (NCIBI), one of eight NIH National Biomedical Computing Centers. Brian also serves as CSO of the tranSMART Foundation, an emerging US and EU consortium to create and support an open data sharing, platform, and analytic software “Apps Store” to accelerate clinical and translational research. Brian has served as the Biomedical Informatics Core Director of Michigan’s Clinical and Translational Science Award (CTSA), and was Associate Director of the Michigan Institute for Clinical and Health Research (MICHR). Brian has served as Director of Academic Informatics for the Medical School. Brian is an active teacher and mentor, being the Principal Investigator of the U-M NIH/NIGMS Bioinformatics Training Grant; he has trained more than 20 Ph.D. students and Post-Doctoral Fellows.")
-					+advisor('Dr. Jacques Donze', 'Advisory Board', './team/jacques_donze.jpg', "Dr. Donzé is Harvard faculty and a scientist at Brigham and Women’s Hospital in Boston, with extensive clinical research experience. He is an Attending Physician board-certified in internal medicine and earned a Master of Science in clinical epidemiology from Harvard School of Public Health. Dr. Donzé’s primary research area focuses on patient readmission and transition of care. He developed a prediction model (HOSPITAL score) to identify medical patients at high risk for having potentially avoidable readmission. He has published several articles in high-impact medical journals, such as in BMJ, JAMA internal medicine, or The American Journal of Medicine. He is the author of a clinical pharmacological book (Brevimed). Other areas of research include anticoagulant therapy, venous thromboembolism, patient experience, and quality of care.")
-					+advisor('Mark Graban', 'Advisory Board', './team/mark_graban.jpg', "A consultant, author, keynote speaker and blogger, Mark is a graduate of Northwestern, with an MS & MBA from MIT. Mark has become the most sought after national expert in “Lean Healthcare.” In June 2011, Mark joined the software company KaiNexus as their “Chief Improvement Officer,” to help further their mission of “making improvement easier” in healthcare organizations, while continuing his other consulting and speaking activities. He is the author of the book “Lean Hospitals: Improving Quality, Patient Safety”, and Employee Engagement (Productivity Press), which was selected for a 2009 Shingo Research and Professional Publication Award and is being translated into seven languages. Mark has also co-authored a new book, titled “Healthcare Kaizen: Engaging Front-Line Staff in Sustainable Continuous Improvements,” which was released in June 2012.")
-					+advisor('Mike Moreno, MD', 'Wellness Director', './team/mike_moreno.jpg', "Dr. Michael Rafael Moreno, better known as “Dr. Mike,” is a graduate of the University of California at Irvine and Hahnemann Medical School (now Drexel University). Following his residency at Kaiser Permanente in Fontana, California, Dr. Mike moved to San Diego, where he now practices family medicine and sits on the board of the San Diego Chapter of the American Academy of Family Physicians. In 2008, Dr. Mike launched “Walk with Your Doc,” which he participates in every Tuesday and Thursday morning before his workday begins. The program began when Dr. Mike offered to walk with a patient to motivate her to exercise and has since grown into a thriving community. Dr. Mike takes pride in being viewed not only as a doctor, but also as a friend and confidant.")
+					+advisor('Brian Athey, Ph.D.', 'Advisory Board Chair', 'Visual', './team/brian_athey.jpg', "Brian D. Athey, Ph.D. is the Michael A. Savageau Collegiate Professor and Inaugural Chair of the Department of Computational Medicine and Bioinformatics at the University of Michigan Medical School. He is also a Professor of Psychiatry and of Internal Medicine. He is the founding Principal Investigator of the NIH National Center for Integrative Biomedical Informatics (NCIBI), one of eight NIH National Biomedical Computing Centers. Brian also serves as CSO of the tranSMART Foundation, an emerging US and EU consortium to create and support an open data sharing, platform, and analytic software “Apps Store” to accelerate clinical and translational research. Brian has served as the Biomedical Informatics Core Director of Michigan’s Clinical and Translational Science Award (CTSA), and was Associate Director of the Michigan Institute for Clinical and Health Research (MICHR). Brian has served as Director of Academic Informatics for the Medical School. Brian is an active teacher and mentor, being the Principal Investigator of the U-M NIH/NIGMS Bioinformatics Training Grant; he has trained more than 20 Ph.D. students and Post-Doctoral Fellows.")
+					+advisor('Dr. Jacques Donze', 'Advisory Board', 'Auditory', './team/jacques_donze.jpg', "Dr. Donzé is Harvard faculty and a scientist at Brigham and Women’s Hospital in Boston, with extensive clinical research experience. He is an Attending Physician board-certified in internal medicine and earned a Master of Science in clinical epidemiology from Harvard School of Public Health. Dr. Donzé’s primary research area focuses on patient readmission and transition of care. He developed a prediction model (HOSPITAL score) to identify medical patients at high risk for having potentially avoidable readmission. He has published several articles in high-impact medical journals, such as in BMJ, JAMA internal medicine, or The American Journal of Medicine. He is the author of a clinical pharmacological book (Brevimed). Other areas of research include anticoagulant therapy, venous thromboembolism, patient experience, and quality of care.")
+					+advisor('Mark Graban', 'Advisory Board', 'Kinesthetic', './team/mark_graban.jpg', "A consultant, author, keynote speaker and blogger, Mark is a graduate of Northwestern, with an MS & MBA from MIT. Mark has become the most sought after national expert in “Lean Healthcare.” In June 2011, Mark joined the software company KaiNexus as their “Chief Improvement Officer,” to help further their mission of “making improvement easier” in healthcare organizations, while continuing his other consulting and speaking activities. He is the author of the book “Lean Hospitals: Improving Quality, Patient Safety”, and Employee Engagement (Productivity Press), which was selected for a 2009 Shingo Research and Professional Publication Award and is being translated into seven languages. Mark has also co-authored a new book, titled “Healthcare Kaizen: Engaging Front-Line Staff in Sustainable Continuous Improvements,” which was released in June 2012.")
+					+advisor('Mike Moreno, MD', 'Wellness Director', 'Visual', './team/mike_moreno.jpg', "Dr. Michael Rafael Moreno, better known as “Dr. Mike,” is a graduate of the University of California at Irvine and Hahnemann Medical School (now Drexel University). Following his residency at Kaiser Permanente in Fontana, California, Dr. Mike moved to San Diego, where he now practices family medicine and sits on the board of the San Diego Chapter of the American Academy of Family Physicians. In 2008, Dr. Mike launched “Walk with Your Doc,” which he participates in every Tuesday and Thursday morning before his workday begins. The program began when Dr. Mike offered to walk with a patient to motivate her to exercise and has since grown into a thriving community. Dr. Mike takes pride in being viewed not only as a doctor, but also as a friend and confidant.")
 					//+advisor('James Weber, MD', 'Advisory Board', './team/james_weber.jpg', "As Chief Research Officer for Hurley Medical Center, Dr. Weber guides the Hurley Research Center in establishing and directing a faculty mentorship program and serves as senior administrator over Hurley’s institutional review board. Dr. Weber also collaborates with Hurley Health Services to foster economic growth and development for the hospital and surrounding community. Dr. Weber is an Associate Professor of Emergency Medicine at the University of Michigan Medical School in Ann Arbor. He has authored over 100 peer-reviewed publications and has received nearly $10 million in research funding from such agencies as the Centers for Disease Control, the National Institutes of Health and the National Institute on Drug Abuse. Dr. Weber has been twice named “Professor of the Year” at the University of Michigan Medical School. He is also a graduate of the University of Michigan.")
 
 				
